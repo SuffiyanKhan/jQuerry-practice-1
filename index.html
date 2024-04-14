@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .may-Class{
+            font-size: large;
+            font-weight: bolder;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-transform: capitalize;
+        }
+        .animation{
+            width: 300px;
+            height: 300px;
+            animation: animated  5s ease-in-out 2s infinite;
+        }
+        @keyframes animated {
+            0%{
+                background-color: blue;
+                transform: translateY(0);
+            }
+            50%{
+                background-color: aqua;
+                transform: translateY(100px);
+            }
+            100%{
+                background-color: blue;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <p id="one">this may page 1</p>
+    <p class="two">this may page 2</p>
+    <p class="three">this may page 3</p>
+    <p>this may page 4</p>
+    <div class="main">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste illum vero rerum incidunt tempora architecto maiores magni optio, fugit reiciendis molestiae voluptate magnam quae dolor nesciunt facilis repudiandae molestias modi.
+    </div>
+    <p class="hi">hi,</p>
+    <button class="btn">click</button>
+</body>
+<script src="./jQuerry/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(() => {
+        // console.log($)
+        $('p').click(() => {
+            console.log("hi")
+            // $(this).hide()
+            // $(this).hide()
+        })
+        $('#one').click(() => {
+            $('#one').hide()
+        })
+        $('.two').css({'background-color' : 'red', 'width' : '150px'})
+        // $('.main').animate({opacity : 0.4} ,2000 )
+        $('.main').animate(
+            {
+                opacity : 0.4,
+                width : '200px',
+
+            } ,2000 )
+        $('.hi').addClass('may-Class')
+        // $('.three').addClass('animation')
+        $('.btn').click(()=>{
+        $('.three').addClass('animation')
+        })
+    })
+</script>
+</html>
